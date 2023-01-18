@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Convert to Binary</title>
+    </head>
+
+    <body>
+
+    </body>
+
+    <script>
+        var answer = "";
+        data = parseInt(prompt('Please enter a number', ""));
+        if (data >= 0 && data < 256) {
+            var datanum = data;
+            for (var i = 7; i >= 0; i--) {
+                if (Math.pow(2, i) <= datanum) {
+                    answer += "1";
+                    datanum -= Math.pow(2, i);
+                }
+                else {
+                    answer += "0";
+                }
+
+            }
+            document.write("The decimal number " + data + " converted to binary is: " + answer);
+
+        }
+        else if (data < 0) {
+            alert("this is too low");
+        }
+        else if (data > 255) {
+            alert("This number is too high");
+        }
+        else {
+            alert("Please enter a number");
+        }
+
+    </script>
+
+</html>
